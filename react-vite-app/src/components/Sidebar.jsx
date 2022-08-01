@@ -1,5 +1,4 @@
 import TwitterIcon from '@mui/icons-material/Twitter';
-import {SidebarOption} from './SidebarOption';
 import HomeIcon from '@mui/icons-material/Home';
 import SearchIcon from '@mui/icons-material/Search';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
@@ -9,53 +8,131 @@ import ListAltIcon from '@mui/icons-material/ListAlt';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import {Button} from '@mui/material';
-import {css} from '@emotion/css';
+import {css, cx} from '@emotion/css';
 import styled from '@emotion/styled';
+import {default as SidebarOption} from './SidebarOption';
+import {DoTwitter} from './DoTwitter';
+import {useCallback} from 'react';
 
-const StyledSidebar = styled.div`
-  margin-top: 2rem;
-  flex-basis: 20%;
-  min-width: 250px;
-  padding-left: 20px;
-  padding-right: 20px;
-  position: relative;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-  gap: 1rem;
-`;
+const Sidebar = () => {
+  const handleMenuClick = useCallback((e, menu) => {
+    console.log(`menu`, menu);
+  }, []);
 
-function Sidebar() {
   return (
-    <StyledSidebar>
-      <TwitterIcon
+    <div
+      className={css`
+        max-width: 16rem;
+        width: 100%;
+        padding: 1rem;
+        @media (max-width: 768px) {
+          max-width: 3rem;
+          padding: 0.5rem;
+        }
+      `}
+    >
+      <ul
         className={css`
-          position: absolute;
-          top: 0;
-          left: 0;
+          width: 100%;
+          list-style: none;
+          position: relative;
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          @media (max-width: 768px) {
+            justify-content: center;
+            align-items: center;
+          }
+          flex-direction: column;
+          gap: 0.5rem;
         `}
-      />
-
-      <SidebarOption text="ホーム" Icon={HomeIcon} isActive />
-      <SidebarOption text="話題を検索" Icon={SearchIcon} />
-      <SidebarOption text="通知" Icon={NotificationsNoneIcon} />
-      <SidebarOption text="メッセージ" Icon={MailOutlineIcon} />
-      <SidebarOption text="ブックマーク" Icon={BookmarkBorderIcon} />
-      <SidebarOption text="リスト" Icon={ListAltIcon} />
-      <SidebarOption text="プロフィール" Icon={PermIdentityIcon} />
-      <SidebarOption text="もっとみる" Icon={MoreHorizIcon} />
-      <Button
-        variant="outlined"
-        className={css`
-          margin-top: 2rem;
-        `}
-        fullWidth
       >
-        ツイートする
-      </Button>
-    </StyledSidebar>
+        <SidebarOption
+          text="twiiter"
+          className={css`
+            width: initial;
+          `}
+          handleClick={handleMenuClick}
+        >
+          <TwitterIcon />
+        </SidebarOption>
+        <SidebarOption text="ホーム" handleClick={handleMenuClick}>
+          <HomeIcon />
+        </SidebarOption>
+        <SidebarOption text="話題を検索" handleClick={handleMenuClick}>
+          <SearchIcon />
+        </SidebarOption>
+        <SidebarOption text="通知" handleClick={handleMenuClick}>
+          <NotificationsNoneIcon />
+        </SidebarOption>
+        <SidebarOption text="メッセージ" handleClick={handleMenuClick}>
+          <MailOutlineIcon />
+        </SidebarOption>
+        <SidebarOption text="ブックマーク" handleClick={handleMenuClick}>
+          <BookmarkBorderIcon />
+        </SidebarOption>
+        <SidebarOption text="リスト" handleClick={handleMenuClick}>
+          <ListAltIcon />
+        </SidebarOption>
+        <SidebarOption text="プロフィール" handleClick={handleMenuClick}>
+          <PermIdentityIcon />
+        </SidebarOption>
+        <SidebarOption
+          text="もっとみる"
+          handleClick={handleMenuClick}
+          menuData={[
+            {
+              id: 0,
+              name: `Topics`,
+            },
+            {
+              id: 1,
+              name: `Moments`,
+            },
+            {
+              id: 2,
+              name: `Newsletters`,
+            },
+            {
+              id: 3,
+              name: `Twitter for Professionals`,
+            },
+            {
+              id: 4,
+              name: `Twitter Ads`,
+            },
+            {
+              id: 5,
+              name: `Analytics`,
+            },
+            {
+              id: 6,
+              name: `Media Studio`,
+            },
+            {
+              id: 7,
+              name: `Settings and privacy`,
+            },
+            {
+              id: 8,
+              name: `Help Center`,
+            },
+            {
+              id: 9,
+              name: `Display`,
+            },
+            {
+              id: 10,
+              name: `Keyboard shortcuts`,
+            },
+          ]}
+        >
+          <MoreHorizIcon />
+        </SidebarOption>
+        <DoTwitter />
+      </ul>
+    </div>
   );
-}
+};
 
 export {Sidebar};

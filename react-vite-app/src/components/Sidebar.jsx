@@ -38,9 +38,13 @@ const Sidebar = () => {
         max-width: 16rem;
         width: 100%;
         padding: 1rem;
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
           max-width: 3rem;
           padding: 0.5rem;
+          margin-right: 2rem;
+        }
+        @media (max-width: 768px) {
+          margin-right: initial;
         }
       `}
     >
@@ -52,7 +56,7 @@ const Sidebar = () => {
           display: flex;
           justify-content: flex-start;
           align-items: flex-start;
-          @media (max-width: 768px) {
+          @media (max-width: 900px) {
             justify-content: center;
             align-items: center;
           }
@@ -69,29 +73,29 @@ const Sidebar = () => {
         >
           <TwitterIcon />
         </SidebarOption>
-        <SidebarOption text="ホーム" handleClick={handleMenuClick}>
+        <SidebarOption text="Home" handleClick={handleMenuClick}>
           <HomeIcon />
         </SidebarOption>
-        <SidebarOption text="話題を検索" handleClick={handleMenuClick}>
+        <SidebarOption text="Explore" handleClick={handleMenuClick}>
           <SearchIcon />
         </SidebarOption>
-        <SidebarOption text="通知" handleClick={handleMenuClick}>
+        <SidebarOption text="Notifications" handleClick={handleMenuClick}>
           <NotificationsNoneIcon />
         </SidebarOption>
-        <SidebarOption text="メッセージ" handleClick={handleMenuClick}>
+        <SidebarOption text="Messages" handleClick={handleMenuClick}>
           <MailOutlineIcon />
         </SidebarOption>
-        <SidebarOption text="ブックマーク" handleClick={handleMenuClick}>
+        <SidebarOption text="Bookmarks" handleClick={handleMenuClick}>
           <BookmarkBorderIcon />
         </SidebarOption>
-        <SidebarOption text="リスト" handleClick={handleMenuClick}>
+        <SidebarOption text="Lists" handleClick={handleMenuClick}>
           <ListAltIcon />
         </SidebarOption>
-        <SidebarOption text="プロフィール" handleClick={handleMenuClick}>
+        <SidebarOption text="Profile" handleClick={handleMenuClick}>
           <PermIdentityIcon />
         </SidebarOption>
         <SidebarOption
-          text="もっとみる"
+          text="More"
           handleClick={handleMenuClick}
           menuData={[
             {

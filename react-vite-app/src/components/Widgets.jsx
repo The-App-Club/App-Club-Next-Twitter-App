@@ -11,9 +11,13 @@ import styled from '@emotion/styled';
 import {css} from '@emotion/css';
 
 const StyledWidgets = styled.div`
-  margin-top: 2rem;
-  margin-left: 1rem;
-  flex-basis: 35%;
+  position: relative;
+  padding: 1rem;
+  max-width: 30rem;
+  width: 100%;
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
 
 const Widgets = () => {
@@ -55,15 +59,29 @@ const Widgets = () => {
         </Button>
       </div>
 
-      <div>
-        <h2
-          className={css`
-            margin-top: 1.5rem;
-          `}
-        >
-          いまどうしてる？
-        </h2>
+      <h2
+        className={css`
+          font-size: 1rem;
+        `}
+      >
+        What's happening
+      </h2>
 
+      <div
+        className={css`
+          padding: 1rem;
+          position: absolute;
+          top: 40%;
+          left: 0;
+          width: 100%;
+          max-height: 60%;
+          overflow: hidden;
+          overflow-y: auto;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        `}
+      >
         {/* https://tweeterid.com/ */}
         <TwitterTweetEmbed tweetId={'1552168136954486784'} />
 

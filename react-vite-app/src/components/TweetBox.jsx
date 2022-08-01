@@ -29,7 +29,13 @@ const TweetBox = () => {
   });
 
   return (
-    <div>
+    <div
+      className={css`
+        @media (max-width: 900px) {
+          display: none;
+        }
+      `}
+    >
       <form onSubmit={formik.handleSubmit}>
         <StyledItem>
           <TextField
@@ -74,7 +80,7 @@ const TweetBox = () => {
                 margin-top: 2rem;
               `}
             >
-              ツイートする
+              Tweet
             </Button>
           </StyledItem>
         </div>

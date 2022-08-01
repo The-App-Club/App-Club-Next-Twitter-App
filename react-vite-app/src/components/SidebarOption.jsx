@@ -34,7 +34,7 @@ const SidebarOption = ({
           justify-content: flex-start;
           align-items: center;
           width: 100%;
-          @media (max-width: 768px) {
+          @media (max-width: 900px) {
             width: initial;
           }
           padding: 0.25rem 0;
@@ -46,7 +46,7 @@ const SidebarOption = ({
             padding-left: 1rem;
             font-size: 1rem;
             font-weight: 800;
-            @media (max-width: 768px) {
+            @media (max-width: 900px) {
               display: none;
             }
           }

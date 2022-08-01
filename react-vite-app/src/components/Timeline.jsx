@@ -6,9 +6,16 @@ import styled from '@emotion/styled';
 import {css} from '@emotion/css';
 
 const StyledTimeline = styled.div`
-  margin-top: 2rem;
-  flex-basis: 45%;
+  max-width: 600px;
+  width: 100%;
+  overflow: hidden;
   overflow-y: scroll;
+  @media (max-width: 900px) {
+    margin-right: 2rem;
+  }
+  @media (max-width: 768px) {
+    margin-right: 0.5rem;
+  }
   &::-webkit-scrollbar {
     display: none;
   }
@@ -16,7 +23,10 @@ const StyledTimeline = styled.div`
     position: sticky;
     top: 0;
     background-color: white;
-    padding: 5px 20px;
+    padding: 1rem 0 1rem;
+    @media (max-width: 900px) {
+      padding: 0.5rem 0 1rem;
+    }
     z-index: 2;
   }
 `;
@@ -51,12 +61,39 @@ const Timeline = () => {
       avatar: `https://gravatar.com/avatar/27bbc296fc37cc99b8dfd5ddca405ccf?s=400&d=robohash&r=x`,
       image: ``,
     },
+    {
+      id: 2,
+      displayName: `zak5`,
+      username: `zak5`,
+      verified: true,
+      text: `But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.`,
+      avatar: `https://gravatar.com/avatar/27bbc296fc37cc99b8dfd5ddca405ccf?s=400&d=robohash&r=x`,
+      image: ``,
+    },
+    {
+      id: 2,
+      displayName: `zak5`,
+      username: `zak5`,
+      verified: true,
+      text: `But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.`,
+      avatar: `https://gravatar.com/avatar/27bbc296fc37cc99b8dfd5ddca405ccf?s=400&d=robohash&r=x`,
+      image: ``,
+    },
+    {
+      id: 2,
+      displayName: `zak5`,
+      username: `zak5`,
+      verified: true,
+      text: `But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.`,
+      avatar: `https://gravatar.com/avatar/27bbc296fc37cc99b8dfd5ddca405ccf?s=400&d=robohash&r=x`,
+      image: ``,
+    },
   ]);
 
   return (
     <StyledTimeline>
       <div className="header">
-        <h2>ホーム</h2>
+        <h2>Home</h2>
       </div>
       <TweetBox />
       <FlipMove
@@ -68,7 +105,7 @@ const Timeline = () => {
         {posts.map((post, index) => {
           return (
             <Post
-              key={post.id}
+              key={index}
               displayName={post.displayName}
               username={post.username}
               verified={post.verified}

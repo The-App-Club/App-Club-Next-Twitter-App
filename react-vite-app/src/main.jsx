@@ -14,11 +14,13 @@ import './styles/index.scss';
 const StyledContainer = styled.div`
   display: flex;
   height: 100vh;
-  max-width: 60rem;
+  max-width: 1200px;
+  @media (max-width: 900px) {
+    max-width: 700px;
+  }
   width: 100%;
   margin: 0 auto;
-  padding: 0 10px;
-  border: 3px solid orange;
+  /* border: 3px solid orange; */
 `;
 
 const App = () => {
@@ -26,9 +28,9 @@ const App = () => {
     <StyledContainer>
       <Sidebar />
 
-      {/* <Timeline /> */}
+      <Timeline />
 
-      {/* <Widgets /> */}
+      <Widgets />
     </StyledContainer>
   );
 };

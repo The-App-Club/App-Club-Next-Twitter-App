@@ -14,13 +14,13 @@ const DoTwitter = () => {
         justify-content: center;
         align-items: center;
         button {
-          @media (max-width: 768px) {
+          @media (max-width: 900px) {
             display: none;
           }
         }
         svg {
           display: none;
-          @media (max-width: 768px) {
+          @media (max-width: 900px) {
             display: block;
           }
           &:hover {
@@ -39,7 +39,7 @@ const DoTwitter = () => {
         fullWidth
         onClick={doTweet}
       >
-        ツイートする
+        Tweet
       </Button>
     </div>
   );

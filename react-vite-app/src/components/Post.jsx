@@ -24,15 +24,20 @@ const StyledPost = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding: 0 30px;
-  margin: 30px 0;
+  max-width: 40rem;
+  width: 100%;
+  margin: 0 auto;
+  @media (max-width: 900px) {
+    padding: initial;
+    margin: 0 auto;
+  }
   position: relative;
   & > .header {
     width: 100%;
     display: flex;
     align-items: center;
     align-self: flex-start;
-    padding: 0.5rem;
+    padding: 0.5rem 0;
   }
 `;
 
@@ -96,7 +101,13 @@ const _Post = ({displayName, username, verified, text, image, avatar}, ref) => {
               alt="green iguana"
             />
           )}
-          <CardContent>
+          <CardContent
+            className={css`
+              /* @media (max-width: 768px) {
+                padding: 16px 0 !important;
+              } */
+            `}
+          >
             <Typography variant="body2" color="text.secondary">
               {text ||
                 `Lizards are a widespread group of squamate reptiles, with over
@@ -107,6 +118,9 @@ const _Post = ({displayName, username, verified, text, image, avatar}, ref) => {
         <CardActions
           className={css`
             justify-content: space-between;
+            /* @media (max-width: 768px) {
+              padding: 8px 0 !important;
+            } */
           `}
         >
           <Button size="small" color="primary">

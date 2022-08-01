@@ -8,8 +8,7 @@ import {
 } from '@szhsin/react-menu';
 import '@szhsin/react-menu/dist/index.css';
 import {memo, useRef, useState} from 'react';
-
-import {MdOutlineChat} from 'react-icons/md';
+import {Link} from 'react-router-dom';
 
 const SidebarOption = ({
   text,
@@ -75,27 +74,31 @@ const SidebarOption = ({
       >
         {menuData.map((menuItem, index) => {
           return (
-            <MenuItem
+            <Link
               key={index}
-              onClick={(e) => {
-                menuItem.handleClick(e, menuItem);
-              }}
-              className={cx(
-                `szh-menu__item`,
-                css`
-                  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
-                `
-              )}
+              to={menuItem.pathname}
+              className={css`
+                text-decoration: none;
+                color: initial;
+              `}
             >
-              {menuItem.icon()}
-              <span
-                className={css`
-                  padding-left: 0.5rem;
-                `}
+              <MenuItem
+                className={cx(
+                  css`
+                    padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+                  `
+                )}
               >
-                {menuItem.name}
-              </span>
-            </MenuItem>
+                {menuItem.icon()}
+                <span
+                  className={css`
+                    padding-left: 0.5rem;
+                  `}
+                >
+                  {menuItem.name}
+                </span>
+              </MenuItem>
+            </Link>
           );
         })}
       </ControlledMenu>

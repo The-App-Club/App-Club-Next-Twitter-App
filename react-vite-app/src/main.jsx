@@ -28,8 +28,10 @@ import {SettingsAndPrivacyPage} from './pages/settings-and-privacy';
 import {HelpPage} from './pages/help';
 import {DisplayPage} from './pages/display';
 import {KeyboardShortcutPage} from './pages/keyboard-shortcuts';
+import {DoTwitter} from './components/DoTwitter';
 
 const StyledContainer = styled.div`
+  position: relative;
   display: flex;
   height: 100vh;
   max-width: 1200px;
@@ -93,7 +95,22 @@ const App = () => {
           element={<KeyboardShortcutPage tilte={`Keyboard shortcuts`} />}
         />
       </Routes>
-      {/* <Widgets /> */}
+      <Widgets />
+
+      <div
+        className={css`
+          display: none;
+          @media (max-width: 900px) {
+            display: block;
+          }
+          position: absolute;
+          right: 1rem;
+          bottom: 1rem;
+          z-index: 2;
+        `}
+      >
+        <DoTwitter size={48} />
+      </div>
     </StyledContainer>
   );
 };

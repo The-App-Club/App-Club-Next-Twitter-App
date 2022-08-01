@@ -1,8 +1,10 @@
 - Demo
+
   - [wip site](https://3ik6kp.sse.codesandbox.io/)
 
 - Memo
-  - react v6 routerはoutlet使うといいかも
+
+  - react v6 router は outlet 使うといいかも
   - react flip move は forwardRef しないとエラー出る挙動
 
 - Reference

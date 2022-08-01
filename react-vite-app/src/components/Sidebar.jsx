@@ -128,7 +128,7 @@ const Sidebar = () => {
         >
           <PermIdentityIcon />
         </SidebarOption>
-        <SidebarOption
+        {/* <SidebarOption
           text="More"
           pathname={null}
           handleClick={handleMenuClick}
@@ -224,7 +224,7 @@ const Sidebar = () => {
           ]}
         >
           <MoreHorizIcon />
-        </SidebarOption>
+        </SidebarOption> */}
         <DoTwitter
           className={css`
             display: block;

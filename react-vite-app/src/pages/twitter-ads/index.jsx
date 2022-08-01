@@ -2,7 +2,7 @@ import {css} from '@emotion/css';
 import {Spacer} from '../../components/Spacer';
 import {default as Layout} from '../../layouts/default';
 
-const AdsPage = ({tilte}) => {
+const TwitterAdsPage = ({tilte}) => {
   return (
     <Layout tilte={tilte}>
       {[...Array(100).keys()].map((n) => {
@@ -12,4 +12,4 @@ const AdsPage = ({tilte}) => {
   );
 };
 
-export {AdsPage};
+export {TwitterAdsPage};

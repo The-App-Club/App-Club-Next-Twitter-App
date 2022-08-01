@@ -6,6 +6,7 @@
 
   - react v6 router は outlet 使うといいかも
   - react flip move は forwardRef しないとエラー出る挙動
+  - react-twitter-embed はビルド後のサーブでこける
 
 - Reference
   - [react-icons](https://react-icons.github.io/react-icons)

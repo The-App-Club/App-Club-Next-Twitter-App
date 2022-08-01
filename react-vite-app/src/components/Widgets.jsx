@@ -1,10 +1,10 @@
 import {Search} from '@mui/icons-material';
 import {Button, TextField} from '@mui/material';
-import {
-  TwitterTimelineEmbed,
-  TwitterShareButton,
-  TwitterTweetEmbed,
-} from 'react-twitter-embed';
+// import {
+//   TwitterTimelineEmbed,
+//   TwitterShareButton,
+//   TwitterTweetEmbed,
+// } from 'react-twitter-embed';
 import {useFormik} from 'formik';
 import * as yup from 'yup';
 import styled from '@emotion/styled';
@@ -67,7 +67,8 @@ const Widgets = () => {
         What's happening
       </h2>
 
-      <div
+      {/* ビルドでこける */}
+      {/* <div
         className={css`
           padding: 1rem;
           position: absolute;
@@ -82,7 +83,6 @@ const Widgets = () => {
           }
         `}
       >
-        {/* https://tweeterid.com/ */}
         <TwitterTweetEmbed tweetId={'1552168136954486784'} />
 
         <TwitterTimelineEmbed
@@ -94,7 +94,7 @@ const Widgets = () => {
           url={'https://twitter.com/napzak5'}
           options={{text: '#react', via: 'napzak5'}}
         />
-      </div>
+      </div> */}
     </StyledWidgets>
   );
 };

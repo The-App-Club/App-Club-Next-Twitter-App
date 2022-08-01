@@ -1,4 +1,5 @@
 import {createRoot} from 'react-dom/client';
+import styled from '@emotion/styled';
 import {css} from '@emotion/css';
 import {BrowserRouter, Routes, Route, useLocation} from 'react-router-dom';
 import {useCallback, useRef, useState} from 'react';
@@ -6,10 +7,8 @@ import {useCallback, useRef, useState} from 'react';
 import {Sidebar} from './components/Sidebar';
 import {Timeline} from './components/Timeline';
 import {Widgets} from './components/Widgets';
-import styled from '@emotion/styled';
+import {DoTwitter} from './components/DoTwitter';
 
-import '@fontsource/inter';
-import './styles/index.scss';
 import {HomePage} from './pages/home';
 import {TopicPage} from './pages/topic';
 import {ExplorePage} from './pages/explore';
@@ -21,14 +20,16 @@ import {ProfilePage} from './pages/profile';
 import {MomentPage} from './pages/moment';
 import {NewsLetterPage} from './pages/newsletter';
 import {ProPage} from './pages/pro';
-import {AdsPage} from './pages/ads';
+import {TwitterAdsPage} from './pages/twitter-ads';
 import {AnalyticsPage} from './pages/analytics';
 import {MediaStudioPage} from './pages/media-studio';
 import {SettingsAndPrivacyPage} from './pages/settings-and-privacy';
 import {HelpPage} from './pages/help';
 import {DisplayPage} from './pages/display';
 import {KeyboardShortcutPage} from './pages/keyboard-shortcuts';
-import {DoTwitter} from './components/DoTwitter';
+
+import '@fontsource/inter';
+import './styles/index.scss';
 
 const StyledContainer = styled.div`
   position: relative;
@@ -75,7 +76,10 @@ const App = () => {
           path={`/pro`}
           element={<ProPage tilte={`Twitter for Professionals`} />}
         />
-        <Route path={`/ads`} element={<AdsPage tilte={`Twitter Ads`} />} />
+        <Route
+          path={`/ads`}
+          element={<TwitterAdsPage tilte={`Twitter Ads`} />}
+        />
         <Route
           path={`/analytics`}
           element={<AnalyticsPage tilte={`Analytics`} />}

@@ -1,12 +1,12 @@
 import {css, cx} from '@emotion/css';
-// import {
-//   Menu,
-//   ControlledMenu,
-//   MenuItem,
-//   MenuButton,
-//   SubMenu,
-// } from '@szhsin/react-menu';
-// import '@szhsin/react-menu/dist/index.css';
+import {
+  Menu,
+  ControlledMenu,
+  MenuItem,
+  MenuButton,
+  SubMenu,
+} from '@szhsin/react-menu';
+import '@szhsin/react-menu/dist/index.css';
 import {memo, useRef, useState} from 'react';
 import {Link} from 'react-router-dom';
 
@@ -56,7 +56,7 @@ const SidebarOption = ({
       }}
     >
       {children}
-      {/* <ControlledMenu
+      <ControlledMenu
         state={isOpen ? 'open' : 'closed'}
         anchorRef={menuDomRef}
         onMouseLeave={() => {
@@ -101,7 +101,7 @@ const SidebarOption = ({
             </Link>
           );
         })}
-      </ControlledMenu> */}
+      </ControlledMenu>
       {text === 'twiiter' ? null : <h2>{text}</h2>}
     </li>
   );

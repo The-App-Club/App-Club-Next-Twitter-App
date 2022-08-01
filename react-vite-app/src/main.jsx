@@ -19,6 +19,15 @@ import {BookmarkPage} from './pages/bookmark';
 import {ListPage} from './pages/list';
 import {ProfilePage} from './pages/profile';
 import {MomentPage} from './pages/moment';
+import {NewsLetterPage} from './pages/newsletter';
+import {ProPage} from './pages/pro';
+import {AdsPage} from './pages/ads';
+import {AnalyticsPage} from './pages/analytics';
+import {MediaStudioPage} from './pages/media-studio';
+import {SettingsAndPrivacyPage} from './pages/settings-and-privacy';
+import {HelpPage} from './pages/help';
+import {DisplayPage} from './pages/display';
+import {KeyboardShortcutPage} from './pages/keyboard-shortcuts';
 
 const StyledContainer = styled.div`
   display: flex;
@@ -56,6 +65,33 @@ const App = () => {
 
         <Route path={`/topic`} element={<TopicPage tilte={`Topic`} />} />
         <Route path={`/moment`} element={<MomentPage tilte={`Moment`} />} />
+        <Route
+          path={`/newsletters`}
+          element={<NewsLetterPage tilte={`Newsletters`} />}
+        />
+        <Route
+          path={`/pro`}
+          element={<ProPage tilte={`Twitter for Professionals`} />}
+        />
+        <Route path={`/ads`} element={<AdsPage tilte={`Twitter Ads`} />} />
+        <Route
+          path={`/analytics`}
+          element={<AnalyticsPage tilte={`Analytics`} />}
+        />
+        <Route
+          path={`/media-studio`}
+          element={<MediaStudioPage tilte={`Media Studio`} />}
+        />
+        <Route
+          path={`/settings-and-privacy`}
+          element={<SettingsAndPrivacyPage tilte={`Settings and Privacy`} />}
+        />
+        <Route path={`/help`} element={<HelpPage tilte={`Help Center`} />} />
+        <Route path={`/display`} element={<DisplayPage tilte={`Display`} />} />
+        <Route
+          path={`/keyboard-shortcuts`}
+          element={<KeyboardShortcutPage tilte={`Keyboard shortcuts`} />}
+        />
       </Routes>
       {/* <Widgets /> */}
     </StyledContainer>

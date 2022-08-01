@@ -10,7 +10,6 @@ import '@szhsin/react-menu/dist/index.css';
 import {memo, useRef, useState} from 'react';
 
 import {MdOutlineChat} from 'react-icons/md';
-import {useNavigate} from 'react-router-dom';
 
 const SidebarOption = ({
   text,
@@ -22,18 +21,6 @@ const SidebarOption = ({
 }) => {
   const menuDomRef = useRef(null);
   const [isOpen, setOpen] = useState();
-  const navigate = useNavigate();
-
-  const handleSubMenuClick = (e, menuItem) => {
-    const {pathname} = menuItem;
-    console.log(`pathname`, pathname);
-    navigate(pathname, {
-      state: {
-        ...menuItem,
-      },
-    });
-  };
-
   return (
     <li
       ref={menuDomRef}
@@ -91,7 +78,7 @@ const SidebarOption = ({
             <MenuItem
               key={index}
               onClick={(e) => {
-                handleSubMenuClick(e, menuItem);
+                menuItem.handleClick(e, menuItem);
               }}
               className={cx(
                 `szh-menu__item`,

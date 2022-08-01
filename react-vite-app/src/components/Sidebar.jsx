@@ -78,6 +78,7 @@ const Sidebar = () => {
           className={css`
             width: initial;
           `}
+          pathname={`/`}
           handleClick={handleMenuClick}
         >
           <TwitterIcon />
@@ -138,6 +139,7 @@ const Sidebar = () => {
               icon: () => {
                 return <MdOutlineChat size={24} />;
               },
+              handleClick: handleMenuClick,
             },
             {
               id: 1,
@@ -146,6 +148,7 @@ const Sidebar = () => {
               icon: () => {
                 return <GrBeacon size={24} />;
               },
+              handleClick: handleMenuClick,
             },
             {
               id: 2,
@@ -154,6 +157,7 @@ const Sidebar = () => {
               icon: () => {
                 return <RiNewspaperLine size={24} />;
               },
+              handleClick: handleMenuClick,
             },
             {
               id: 3,
@@ -162,6 +166,7 @@ const Sidebar = () => {
               icon: () => {
                 return <GrDeploy size={24} />;
               },
+              handleClick: handleMenuClick,
             },
             {
               id: 4,
@@ -170,6 +175,7 @@ const Sidebar = () => {
               icon: () => {
                 return <FaBuysellads size={24} />;
               },
+              handleClick: handleMenuClick,
             },
             {
               id: 5,
@@ -178,6 +184,7 @@ const Sidebar = () => {
               icon: () => {
                 return <RiBarChartFill size={24} />;
               },
+              handleClick: handleMenuClick,
             },
             {
               id: 6,
@@ -186,14 +193,16 @@ const Sidebar = () => {
               icon: () => {
                 return <MdPermMedia size={24} />;
               },
+              handleClick: handleMenuClick,
             },
             {
               id: 7,
-              name: `Settings and privacy`,
+              name: `Settings and Privacy`,
               pathname: `/settings-and-privacy`,
               icon: () => {
                 return <MdSettings size={24} />;
               },
+              handleClick: handleMenuClick,
             },
             {
               id: 8,
@@ -202,6 +211,7 @@ const Sidebar = () => {
               icon: () => {
                 return <MdOutlineHelpOutline size={24} />;
               },
+              handleClick: handleMenuClick,
             },
             {
               id: 9,
@@ -210,6 +220,7 @@ const Sidebar = () => {
               icon: () => {
                 return <MdComputer size={24} />;
               },
+              handleClick: handleMenuClick,
             },
             {
               id: 10,
@@ -218,6 +229,7 @@ const Sidebar = () => {
               icon: () => {
                 return <MdKeyboard size={24} />;
               },
+              handleClick: handleMenuClick,
             },
           ]}
         >

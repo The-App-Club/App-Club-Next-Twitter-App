@@ -2,34 +2,7 @@ import {useState, useEffect} from 'react';
 import {Post} from './Post';
 import {TweetBox} from './TweetBox';
 import FlipMove from 'react-flip-move';
-import styled from '@emotion/styled';
 import {css} from '@emotion/css';
-
-const StyledTimeline = styled.div`
-  max-width: 600px;
-  width: 100%;
-  overflow: hidden;
-  overflow-y: scroll;
-  @media (max-width: 900px) {
-    margin-right: 2rem;
-  }
-  @media (max-width: 768px) {
-    margin-right: 0.5rem;
-  }
-  &::-webkit-scrollbar {
-    display: none;
-  }
-  & > .header {
-    position: sticky;
-    top: 0;
-    background-color: white;
-    padding: 1rem 0 1rem;
-    @media (max-width: 900px) {
-      padding: 0.5rem 0 1rem;
-    }
-    z-index: 2;
-  }
-`;
 
 const Timeline = () => {
   // https://vinicius73.github.io/gravatar-url-generator/#/
@@ -91,10 +64,12 @@ const Timeline = () => {
   ]);
 
   return (
-    <StyledTimeline>
-      <div className="header">
-        <h2>Home</h2>
-      </div>
+    <div
+      className={css`
+        position: relative;
+        width: 100%;
+      `}
+    >
       <TweetBox />
       <FlipMove
         className={css`
@@ -116,7 +91,7 @@ const Timeline = () => {
           );
         })}
       </FlipMove>
-    </StyledTimeline>
+    </div>
   );
 };
 

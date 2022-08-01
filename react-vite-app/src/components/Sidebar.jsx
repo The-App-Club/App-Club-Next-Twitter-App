@@ -26,10 +26,19 @@ import {MdSettings} from 'react-icons/md';
 import {MdOutlineHelpOutline} from 'react-icons/md';
 import {MdComputer} from 'react-icons/md';
 import {MdKeyboard} from 'react-icons/md';
-
+import {useNavigate} from 'react-router-dom';
 const Sidebar = () => {
-  const handleMenuClick = useCallback((e, menu) => {
-    console.log(`menu`, menu);
+  const navigate = useNavigate();
+
+  const handleMenuClick = useCallback((e, menuItem) => {
+    const {pathname} = menuItem;
+    if (pathname) {
+      navigate(pathname, {
+        state: {
+          ...menuItem,
+        },
+      });
+    }
   }, []);
 
   return (
@@ -73,25 +82,49 @@ const Sidebar = () => {
         >
           <TwitterIcon />
         </SidebarOption>
-        <SidebarOption text="Home" handleClick={handleMenuClick}>
+        <SidebarOption text="Home" pathname={`/`} handleClick={handleMenuClick}>
           <HomeIcon />
         </SidebarOption>
-        <SidebarOption text="Explore" handleClick={handleMenuClick}>
+        <SidebarOption
+          text="Explore"
+          pathname={`/explore`}
+          handleClick={handleMenuClick}
+        >
           <SearchIcon />
         </SidebarOption>
-        <SidebarOption text="Notifications" handleClick={handleMenuClick}>
+        <SidebarOption
+          text="Notifications"
+          pathname={`/notification`}
+          handleClick={handleMenuClick}
+        >
           <NotificationsNoneIcon />
         </SidebarOption>
-        <SidebarOption text="Messages" handleClick={handleMenuClick}>
+        <SidebarOption
+          text="Messages"
+          pathname={`/message`}
+          handleClick={handleMenuClick}
+        >
           <MailOutlineIcon />
         </SidebarOption>
-        <SidebarOption text="Bookmarks" handleClick={handleMenuClick}>
+        <SidebarOption
+          text="Bookmarks"
+          pathname={`/bookmark`}
+          handleClick={handleMenuClick}
+        >
           <BookmarkBorderIcon />
         </SidebarOption>
-        <SidebarOption text="Lists" handleClick={handleMenuClick}>
+        <SidebarOption
+          text="Lists"
+          pathname={`/list`}
+          handleClick={handleMenuClick}
+        >
           <ListAltIcon />
         </SidebarOption>
-        <SidebarOption text="Profile" handleClick={handleMenuClick}>
+        <SidebarOption
+          text="Profile"
+          pathname={`/profile`}
+          handleClick={handleMenuClick}
+        >
           <PermIdentityIcon />
         </SidebarOption>
         <SidebarOption
@@ -101,6 +134,7 @@ const Sidebar = () => {
             {
               id: 0,
               name: `Topics`,
+              pathname: `/topic`,
               icon: () => {
                 return <MdOutlineChat size={24} />;
               },
@@ -108,6 +142,7 @@ const Sidebar = () => {
             {
               id: 1,
               name: `Moments`,
+              pathname: `/moment`,
               icon: () => {
                 return <GrBeacon size={24} />;
               },
@@ -115,6 +150,7 @@ const Sidebar = () => {
             {
               id: 2,
               name: `Newsletters`,
+              pathname: `/newsletters`,
               icon: () => {
                 return <RiNewspaperLine size={24} />;
               },
@@ -122,6 +158,7 @@ const Sidebar = () => {
             {
               id: 3,
               name: `Twitter for Professionals`,
+              pathname: `/pro`,
               icon: () => {
                 return <GrDeploy size={24} />;
               },
@@ -129,6 +166,7 @@ const Sidebar = () => {
             {
               id: 4,
               name: `Twitter Ads`,
+              pathname: `/ads`,
               icon: () => {
                 return <FaBuysellads size={24} />;
               },
@@ -136,6 +174,7 @@ const Sidebar = () => {
             {
               id: 5,
               name: `Analytics`,
+              pathname: `/analytics`,
               icon: () => {
                 return <RiBarChartFill size={24} />;
               },
@@ -143,6 +182,7 @@ const Sidebar = () => {
             {
               id: 6,
               name: `Media Studio`,
+              pathname: `/media-studio`,
               icon: () => {
                 return <MdPermMedia size={24} />;
               },
@@ -150,6 +190,7 @@ const Sidebar = () => {
             {
               id: 7,
               name: `Settings and privacy`,
+              pathname: `/settings-and-privacy`,
               icon: () => {
                 return <MdSettings size={24} />;
               },
@@ -157,6 +198,7 @@ const Sidebar = () => {
             {
               id: 8,
               name: `Help Center`,
+              pathname: `/help`,
               icon: () => {
                 return <MdOutlineHelpOutline size={24} />;
               },
@@ -164,6 +206,7 @@ const Sidebar = () => {
             {
               id: 9,
               name: `Display`,
+              pathname: `/display`,
               icon: () => {
                 return <MdComputer size={24} />;
               },
@@ -171,6 +214,7 @@ const Sidebar = () => {
             {
               id: 10,
               name: `Keyboard shortcuts`,
+              pathname: `/keyboard-shortcuts`,
               icon: () => {
                 return <MdKeyboard size={24} />;
               },

@@ -20,7 +20,7 @@ const motionConfig = {
   },
 };
 
-const Layout = ({children, pageName, notifier}) => {
+const Layout = ({children, tilte}) => {
   return (
     <motion.div
       variants={motionConfig}
@@ -33,12 +33,36 @@ const Layout = ({children, pageName, notifier}) => {
       }}
       className={css`
         position: relative;
+        max-width: 600px;
+        width: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+        @media (max-width: 900px) {
+          margin-right: 2rem;
+        }
+        @media (max-width: 768px) {
+          margin-right: 0.5rem;
+        }
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        & > .header {
+          position: sticky;
+          top: 0;
+          background-color: white;
+          padding: 1rem 0 1rem;
+          @media (max-width: 900px) {
+            padding: 0.5rem 0 1rem;
+          }
+          z-index: 2;
+        }
       `}
       onAnimationStart={(e) => {}}
-      onAnimationComplete={(e) => {
-        notifier({message: `done`, pageName});
-      }}
+      onAnimationComplete={(e) => {}}
     >
+      <div className="header">
+        <h2>{tilte}</h2>
+      </div>
       {children}
     </motion.div>
   );

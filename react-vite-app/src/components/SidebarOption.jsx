@@ -10,19 +10,28 @@ import '@szhsin/react-menu/dist/index.css';
 import {memo, useRef, useState} from 'react';
 
 import {MdOutlineChat} from 'react-icons/md';
+import {useNavigate} from 'react-router-dom';
 
 const SidebarOption = ({
   text,
   menuData = [],
   handleClick,
+  pathname,
   className = css``,
   children,
 }) => {
   const menuDomRef = useRef(null);
   const [isOpen, setOpen] = useState();
+  const navigate = useNavigate();
 
   const handleSubMenuClick = (e, menuItem) => {
-    console.log(`menuItem`, menuItem);
+    const {pathname} = menuItem;
+    console.log(`pathname`, pathname);
+    navigate(pathname, {
+      state: {
+        ...menuItem,
+      },
+    });
   };
 
   return (
@@ -54,7 +63,7 @@ const SidebarOption = ({
         className
       )}
       onClick={(e) => {
-        handleClick(e, text);
+        handleClick(e, {pathname});
         if (!isOpen) {
           setOpen(true);
         }

@@ -14,7 +14,8 @@ import './styles/index.scss';
 const StyledContainer = styled.div`
   display: flex;
   height: 100vh;
-  max-width: 1200px;
+  max-width: 60rem;
+  width: 100%;
   margin: 0 auto;
   padding: 0 10px;
   border: 3px solid orange;

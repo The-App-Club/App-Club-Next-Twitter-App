@@ -9,6 +9,8 @@ import {
 import '@szhsin/react-menu/dist/index.css';
 import {memo, useRef, useState} from 'react';
 
+import {MdOutlineChat} from 'react-icons/md';
+
 const SidebarOption = ({
   text,
   menuData = [],
@@ -82,8 +84,21 @@ const SidebarOption = ({
               onClick={(e) => {
                 handleSubMenuClick(e, menuItem);
               }}
+              className={cx(
+                `szh-menu__item`,
+                css`
+                  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+                `
+              )}
             >
-              {menuItem.name}
+              {menuItem.icon()}
+              <span
+                className={css`
+                  padding-left: 0.5rem;
+                `}
+              >
+                {menuItem.name}
+              </span>
             </MenuItem>
           );
         })}
